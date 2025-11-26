@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-/* En esta sección establezco la paleta de colores inspirada en el atardecer */
+/* En esta sección establezco la paleta de colores  */
 :root {
   --color-fondo-principal: #1f1b24;
   --color-fondo-seccion: #2a2330;
@@ -24,6 +24,23 @@ body {
   background: radial-gradient(circle at top, #413162 0, #1f1b24 55%, #120f18 100%);
   color: var(--color-texto);
 }
+
+/* En esta sección defino altura completa y estructura general de la página */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* En esta sección hago que el contenido principal empuje al pie de página */
+main {
+  flex: 1 0 auto;
+}
+
 
 /* En esta sección defino el contenedor principal de ancho limitado */
 .contenedor {
@@ -311,12 +328,13 @@ body {
   color: var(--color-texto-secundario);
 }
 
-/* En esta sección defino el pie de página */
+/* En esta sección fijo el pie de página al final de la vista */
 .pie {
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   background: #141018;
-  margin-top: 2.5rem;
+  margin-top: 0;        /* elimino el espacio grande de arriba */
 }
+
 
 .pie__contenido {
   padding: 1rem 0;
@@ -343,3 +361,4 @@ body {
     height: 200px;
   }
 }
+
