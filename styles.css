@@ -145,6 +145,14 @@ main {
   margin-bottom: 1.5rem;
 }
 
+.hero__imagen {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  display: block;
+}
+
 /* En esta sección defino los estilos de botones */
 .boton {
   display: inline-flex;
@@ -361,4 +369,5 @@ main {
     height: 200px;
   }
 }
+
 
