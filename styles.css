@@ -1,0 +1,345 @@
+/* En esta sección defino la configuración global de la página */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* En esta sección establezco la paleta de colores inspirada en el atardecer */
+:root {
+  --color-fondo-principal: #1f1b24;
+  --color-fondo-seccion: #2a2330;
+  --color-fondo-claro: #31263e;
+  --color-primario: #ff8a5c;       /* naranja atardecer */
+  --color-secundario: #ffb767;     /* dorado suave */
+  --color-acento: #ff5f6d;         /* rojo cálido */
+  --color-texto: #fdf5e6;          /* marfil claro */
+  --color-texto-secundario: #d7c9b8;
+  --color-borde-placeholder: rgba(255, 255, 255, 0.35);
+}
+
+/* En esta sección defino la tipografía y el fondo general */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #413162 0, #1f1b24 55%, #120f18 100%);
+  color: var(--color-texto);
+}
+
+/* En esta sección defino el contenedor principal de ancho limitado */
+.contenedor {
+  width: min(1200px, 100% - 3rem);
+  margin: 0 auto;
+}
+
+/* En esta sección defino el encabezado y la barra de navegación */
+.encabezado {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: linear-gradient(
+    to right,
+    rgba(18, 15, 24, 0.97),
+    rgba(37, 23, 34, 0.97)
+  );
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.encabezado__contenido {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  gap: 1.5rem;
+}
+
+/* En esta sección defino el estilo del logotipo textual */
+.logo {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo__titulo {
+  letter-spacing: 0.15em;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-primario);
+}
+
+.logo__subtitulo {
+  font-size: 0.8rem;
+  color: var(--color-texto-secundario);
+}
+
+/* En esta sección defino la navegación principal */
+.navegacion {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.navegacion__link {
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: var(--color-texto-secundario);
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.navegacion__link:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: var(--color-texto);
+}
+
+.navegacion__link--activo {
+  background: linear-gradient(135deg, var(--color-primario), var(--color-acento));
+  color: #1f1b24;
+  border-color: transparent;
+}
+
+/* En esta sección defino el bloque héroe de la página principal */
+.hero {
+  padding: 3.5rem 0 3rem;
+}
+
+.hero__contenido {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero__titulo {
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--color-secundario);
+}
+
+.hero__descripcion {
+  font-size: 0.98rem;
+  color: var(--color-texto-secundario);
+  max-width: 32rem;
+  margin-bottom: 1.5rem;
+}
+
+/* En esta sección defino los estilos de botones */
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.6rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.boton--primario {
+  background: linear-gradient(135deg, var(--color-primario), var(--color-acento));
+  color: #1f1b24;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.45);
+}
+
+/* En esta sección reservo el aspecto del placeholder de imagen principal */
+.hero__imagen-placeholder {
+  height: 260px;
+  border-radius: 1.25rem;
+  border: 2px dashed var(--color-borde-placeholder);
+  background: radial-gradient(circle at top, rgba(255, 184, 103, 0.15), rgba(0, 0, 0, 0.6));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.hero__imagen-texto {
+  font-size: 0.85rem;
+  text-align: center;
+  color: var(--color-texto-secundario);
+}
+
+/* En esta sección defino bloques generales reutilizables */
+.bloque {
+  padding: 2.5rem 0;
+}
+
+.fondo-oscuro {
+  background: radial-gradient(circle at top, #2f243a 0, #1f1b24 60%);
+}
+
+.bloque__contenido {
+  max-width: 46rem;
+}
+
+.bloque__titulo {
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-secundario);
+}
+
+.bloque__texto {
+  font-size: 0.95rem;
+  color: var(--color-texto-secundario);
+}
+
+/* En esta sección defino las tarjetas de contenido */
+.grid-tarjetas {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .grid-tarjetas {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.tarjeta {
+  background: var(--color-fondo-seccion);
+  border-radius: 1.1rem;
+  padding: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+}
+
+.tarjeta--menu {
+  min-height: 260px;
+}
+
+.tarjeta--promo {
+  min-height: 170px;
+}
+
+.tarjeta__imagen-placeholder {
+  height: 140px;
+  border-radius: 0.9rem;
+  border: 2px dashed var(--color-borde-placeholder);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: var(--color-texto-secundario);
+  margin-bottom: 0.9rem;
+}
+
+.tarjeta__titulo {
+  font-size: 1.05rem;
+  margin-bottom: 0.4rem;
+  color: var(--color-secundario);
+}
+
+.tarjeta__texto {
+  font-size: 0.9rem;
+  color: var(--color-texto-secundario);
+}
+
+.tarjeta__texto--resaltado {
+  margin-top: 0.6rem;
+  color: var(--color-primario);
+  font-weight: 600;
+}
+
+.tarjeta__lista-precios {
+  list-style: none;
+  margin-top: 0.7rem;
+  font-size: 0.9rem;
+  color: var(--color-texto);
+}
+
+/* En esta sección defino los estilos específicos del menú de comida */
+.seccion-menu {
+  padding: 2.5rem 0 3rem;
+}
+
+.seccion-menu__titulo {
+  font-size: 1.6rem;
+  margin-bottom: 1.4rem;
+  color: var(--color-secundario);
+}
+
+.submenu {
+  margin-bottom: 2.3rem;
+}
+
+.submenu__titulo {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  color: var(--color-primario);
+}
+
+/* En esta sección defino la cuadrícula de galería */
+.seccion-galeria {
+  padding: 2.5rem 0 3rem;
+}
+
+.seccion-galeria__texto {
+  font-size: 0.95rem;
+  color: var(--color-texto-secundario);
+  margin-bottom: 1.5rem;
+}
+
+.grid-galeria {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 700px) {
+  .grid-galeria {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.galeria__item {
+  border-radius: 0.9rem;
+  border: 2px dashed var(--color-borde-placeholder);
+  background: radial-gradient(circle at top, rgba(255, 138, 92, 0.12), rgba(0, 0, 0, 0.55));
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  text-align: center;
+  color: var(--color-texto-secundario);
+}
+
+/* En esta sección defino el pie de página */
+.pie {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  background: #141018;
+  margin-top: 2.5rem;
+}
+
+.pie__contenido {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  color: var(--color-texto-secundario);
+}
+
+/* En esta sección defino ajustes responsivos básicos */
+@media (max-width: 768px) {
+  .encabezado__contenido {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero__contenido {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero__imagen-placeholder {
+    order: -1;
+    height: 200px;
+  }
+}
